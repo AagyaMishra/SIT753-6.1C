@@ -34,6 +34,6 @@ pipeline {
                  to: "aagyamishra403@email.com"
     }
 }
-]
-    }
-}
+
+    
+
