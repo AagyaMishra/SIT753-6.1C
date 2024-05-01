@@ -21,17 +21,17 @@ pipeline {
     success {
         emailext body: "Pipeline execution successful",
                  subject: "Pipeline Status: Success",
-                 to: "aagyamishra403@email.com"
+                 to: "aagyamishra403@gmail.com"
     }
     failure {
         emailext body: "Pipeline execution failed",
                  subject: "Pipeline Status: Failure",
-                 to: "aagyamishra403@email.com"
+                 to: "aagyamishra403@gmail.com"
     }
     always {
         emailext body: "Test and security scan stages completed",
                  subject: "Pipeline Stage Status",
-                 to: "aagyamishra403@email.com"
+                 to: "aagyamishra403@gmail.com"
     }
 }
 
