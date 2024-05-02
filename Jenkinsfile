@@ -1,39 +1,17 @@
 pipeline {
     agent any
-
     stages {
-        stage('Build') {
+        stage("Build") {
             steps {
-                // Define build steps here
+                echo "Building ..."
+            }
+            post {
+                success {
+                    mail to: "aagyamishra403@gmail.com",
+                    subject: "Build Status Email",
+                    body: "Build was successful"
+                }
             }
         }
-        stage('Test') {
-            steps {
-                // Define test steps here
-            }
-        }
-        stage('Deploy') {
-            steps {
-                // Define deployment steps here
-            }
-        }
-        // post {
-    success {
-        emailext body: "Pipeline execution successful",
-                 subject: "Pipeline Status: Success",
-                 to: "aagyamishra403@gmail.com"
-    }
-    failure {
-        emailext body: "Pipeline execution failed",
-                 subject: "Pipeline Status: Failure",
-                 to: "aagyamishra403@gmail.com"
-    }
-    always {
-        emailext body: "Test and security scan stages completed",
-                 subject: "Pipeline Stage Status",
-                 to: "aagyamishra403@gmail.com"
     }
 }
-
-    
-
